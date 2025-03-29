@@ -1,22 +1,43 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Velada de Fermin año V</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Evento de fermin" />
+
+    <meta property="og:url" content="https://www.infoferminxd" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="summary_large_image" />
+    <meta property="og:description" content="@infoFermin" />
+    <meta property="og:image" content="@bnjmn" />
+	<meta property="og:locale" content="es_ES" />
+    <!-- not image webp -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@infoFermin" />
+    <meta name="twitter:creator" content="@bnjmn" />
+    <meta name="twitter:title" content="evento femrin" />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
