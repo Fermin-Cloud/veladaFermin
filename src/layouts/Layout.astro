@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import "./src/styles/global.css";
 ---
 
 <!doctype html>
@@ -11,6 +12,37 @@ import Header from "../components/Header.astro";
     <title>Velada de Fermin año V</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preload de las fuentes para que no se vea el cambio de fuente al cargar la pagina -->
+    <link
+      rel="preload"
+      href="/fonts/anisette-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/anisette-light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/anisette-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/anisette-black.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
     <meta name="description" content="Evento de fermin" />
 
     <meta property="og:url" content="https://www.infoferminxd" />
@@ -18,7 +50,7 @@ import Header from "../components/Header.astro";
     <meta property="og:title" content="summary_large_image" />
     <meta property="og:description" content="@infoFermin" />
     <meta property="og:image" content="@bnjmn" />
-	<meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content="es_ES" />
     <!-- not image webp -->
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -28,16 +60,32 @@ import Header from "../components/Header.astro";
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
 
 <style>
+  *,
+  *::after,
+  *::before,
+  *::backdrop {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   html,
   body {
     margin: 0;
     width: 100%;
     height: 100%;
+    background: #f19fca;
+  }
+
+  main {
+    min-block-size: 100vh;
   }
 </style>
